@@ -2,6 +2,7 @@
     <string name="app_name">SarvarTest</string>
     <string name="permission_denied">Нет прав на показ уведомлений</string>
     <string name="permission_allowed">Есть права на пока уведомлений</string>
-    <string name="permission_denied_forever_message">Я не смогу оповещать тебя об очень важных вещах....</string>
+    <string name="permission_denied_forever_message">Я больше никогда не смогу оповещать тебя об очень важных вещах....</string>
     <string name="open">Открыть</string>
+    <string name="main_welcome">ТА-ДАМ! Готово:)</string>
 </resources>

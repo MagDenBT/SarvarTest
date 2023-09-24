@@ -1,8 +1,6 @@
 package ch.magdenbt.sarvartest
 
 import android.Manifest.permission.POST_NOTIFICATIONS
-import android.app.NotificationChannel
-import android.app.NotificationManager
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -16,9 +14,6 @@ import androidx.core.content.ContextCompat
 
 class SplashActivity : AppCompatActivity() {
 
-    private val IMPORTANT_NOTIFICATION_CHANNEL_ID = "SarvarTestChannel"
-    private val IMPORTANT_NOTIFICATION_CHANNEL_NAME = "Very very important things"
-
     private val requestNotificationPermissionLauncher = registerForActivityResult(
         RequestPermission(),
     ) {
@@ -29,21 +24,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        createImportantChannel()
-
         if (!hasNotificationPermisssion()) {
             requestNotificationPermissionLauncher.launch(POST_NOTIFICATIONS)
         }
-    }
-
-    private fun createImportantChannel() {
-        val channel = NotificationChannel(
-            IMPORTANT_NOTIFICATION_CHANNEL_ID,
-            IMPORTANT_NOTIFICATION_CHANNEL_NAME,
-            NotificationManager.IMPORTANCE_HIGH,
-        )
-        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        manager.createNotificationChannel(channel)
     }
 
     private fun hasNotificationPermisssion() =

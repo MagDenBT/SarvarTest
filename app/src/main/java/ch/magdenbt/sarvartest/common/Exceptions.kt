@@ -2,5 +2,4 @@ package ch.magdenbt.sarvartest.common
 
 open class AppException : Exception()
 
-class RequestTimeOutException(
-) : AppException()
+class RequestTimeOutException() : AppException()

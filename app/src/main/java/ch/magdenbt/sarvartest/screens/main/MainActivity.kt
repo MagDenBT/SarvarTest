@@ -1,7 +1,7 @@
 package ch.magdenbt.sarvartest.screens.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ch.magdenbt.sarvartest.R
 
 class MainActivity : AppCompatActivity() {

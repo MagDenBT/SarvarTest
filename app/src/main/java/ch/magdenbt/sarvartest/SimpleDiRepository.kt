@@ -1,10 +1,9 @@
 package ch.magdenbt.sarvartest
 
-import ch.magdenbt.sarvartest.data_source.DataSource
-import ch.magdenbt.sarvartest.data_source.DataSourceImpl
+import ch.magdenbt.sarvartest.datasource.DataSource
+import ch.magdenbt.sarvartest.datasource.DataSourceImpl
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-
 
 object SimpleDiRepository {
     val dataSource: DataSource by lazy { DataSourceImpl() }

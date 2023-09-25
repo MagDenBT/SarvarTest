@@ -59,12 +59,16 @@ class SplashActivity : AppCompatActivity() {
         ) {
             showShortToast(R.string.permission_denied_forever_message)
         } else {
-            AlertDialog.Builder(this).setTitle(R.string.permission_denied)
-                .setMessage(R.string.permission_denied_forever_message)
-                .setPositiveButton(R.string.open) { _, _ ->
-                    startActivity(appSettingsIntent)
-                }.create().show()
+            createAndShowDialogForSystemNotificationSettings(appSettingsIntent)
         }
+    }
+
+    private fun createAndShowDialogForSystemNotificationSettings(appSettingsIntent: Intent) {
+        AlertDialog.Builder(this).setTitle(R.string.permission_denied)
+            .setMessage(R.string.permission_denied_forever_message)
+            .setPositiveButton(R.string.open) { _, _ ->
+                startActivity(appSettingsIntent)
+            }.create().show()
     }
 
     private fun showShortToast(resId: Int) {

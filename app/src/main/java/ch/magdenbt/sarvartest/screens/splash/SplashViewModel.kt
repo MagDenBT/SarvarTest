@@ -33,11 +33,14 @@ class SplashViewModel(
 
     init {
         CoroutineScope(ioDispatcher).launch {
-            withTimeout(SPLASH_SCREEN_TIMEOUT) {
-                startTimeoutSafetyConfigRequest(LOAD_CONFIG_TIMEOUT)
-                startTimeoutSafetyAsyncTasks(this)
+            try {
+                withTimeout(SPLASH_SCREEN_TIMEOUT) {
+                    startTimeoutSafetyConfigRequest(LOAD_CONFIG_TIMEOUT)
+                    startTimeoutSafetyAsyncTasks(this)
+                }
+            } finally {
+                _allTasksDone.postValue(true)
             }
-            _allTasksDone.postValue(true)
         }
     }
 

@@ -1,6 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.nav_version = "2.5.3"
+
+    ext{
+        def versionMajor = 1
+        def versionMinor = 0
+        def versionPatch = 0
+
+        def versionBuild = 1
+
+        globalVersionName = "$versionMajor.$versionMinor.$versionPatch"
+        globalVersionCode = 1_000_000_000 + 1000 * (10000 * versionMajor + 100 * versionMinor + versionPatch) + versionBuild
+
+        nav_version = "2.5.3"
+    }
 }
 plugins {
     id 'com.android.application' version '8.1.1' apply false

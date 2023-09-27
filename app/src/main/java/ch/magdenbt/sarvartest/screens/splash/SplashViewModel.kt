@@ -13,7 +13,6 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -74,7 +73,6 @@ class SplashViewModel(
             startAsyncTasks(coroutineScope)
             Timber.w("Все асинхронные задачи завершены")
         } catch (ex: CancellationException) {
-            coroutineScope.cancel()
             Timber.e("Асинхронные не успели выполниться за отведенное время")
         }
     }
